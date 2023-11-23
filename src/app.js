@@ -44,4 +44,12 @@ app.put("/livros/:id", (req, res) => {
   res.status(200).json(livros);
 });
 
+app.delete("/livros/:id", (req, res) => {
+  const index = buscaLivro(req.params.id);
+  livros.splice(index, 1);
+  res.status(200).send("Livro removido com sucesso!");
+});
+
 export default app;
+
+//mongodb+srv://guilhermegoulartm:<password>@cluster0.ws6nnbb.mongodb.net/?retryWrites=true&w=majority
