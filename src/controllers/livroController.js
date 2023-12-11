@@ -34,6 +34,33 @@ class LivroController {
       });
     }
   }
+
+  static async AtualizarLivro(req, res) {
+    try {
+      const id = req.params.id;
+      const livroData = req.body;
+      await livro.findByIdAndUpdate(id, livroData);
+      res.status(200).json({ message: "successfully updated" });
+    } catch (error) {
+      res
+        .status(500)
+        .json({ message: `${error.message} - error in update book` });
+    }
+  }
+
+  static async DeletarLivro(req, res) {
+    try {
+      const id = req.params.id;
+      await livro.findByIdAndDelete(id);
+      res.status(200).json({ message: "book deleted" });
+    } catch (error) {
+      res
+        .status(500)
+        .json({
+          message: `${error.message} - was not possible delete this book`,
+        });
+    }
+  }
 }
 
 export default LivroController;
