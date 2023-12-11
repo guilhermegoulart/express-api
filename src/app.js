@@ -22,5 +22,3 @@ app.delete("/livros/:id", (req, res) => {
 });
 
 export default app;
-
-//mongodb+srv://guilhermegoulartm:<password>@cluster0.ws6nnbb.mongodb.net/?retryWrites=true&w=majority
