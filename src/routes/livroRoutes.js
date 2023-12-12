@@ -7,6 +7,6 @@ routes.get("/livros", LivroController.listarLivros);
 routes.get("/livros/:id", LivroController.listarLivroPorId);
 routes.post("/livros", LivroController.CadastrarLivro);
 routes.put("/livros/:id", LivroController.AtualizarLivro);
-routes.delete("livros/:id", LivroController.DeletarLivro);
+routes.delete("/livros/:id", LivroController.DeletarLivro);
 
 export default routes;
