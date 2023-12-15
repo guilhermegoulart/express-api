@@ -31,7 +31,7 @@ class LivroController {
         ...novoLivro,
         autor: { ...autorEncontrado._doc },
       };
-      const LivroCriado = await livro.create(livroCompleto);
+      await livro.create(livroCompleto);
       res
         .status(201)
         .json({ message: "successfully created", livro: novoLivro });
